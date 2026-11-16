@@ -1,0 +1,9 @@
+.hero{isolation:isolate;position:relative}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 320px 245px at var(--hero-x,50%) var(--hero-y,50%),#ff68b444,transparent 100%);opacity:0;transition:opacity .32s ease}
+.collage::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle 285px at var(--glow-x,50%) var(--glow-y,50%),#ffa6dc 0%,#7c91ff 38%,transparent 100%);opacity:0;transition:opacity .32s ease}
+.gridlines{z-index:-1}
+@media (any-hover:hover) and (any-pointer:fine) and (prefers-reduced-motion:no-preference){
+  .hero.is-tracking::before,.collage.is-tracking::after{opacity:.85}
+  .collage .photo{translate:var(--drift-x,0px) var(--drift-y,0px);transition:translate .35s cubic-bezier(.2,.7,.3,1)}
+  .collage .two{translate:calc(var(--drift-x,0px) * -.75) calc(var(--drift-y,0px) * -.75)}
+}
