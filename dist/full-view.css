@@ -1,0 +1,28 @@
+/* Keep the opening artwork and its hover surface flush with the viewport. */
+body > .topline, body > header, body > main, body > footer { max-width: none; }
+.hero { padding-inline: 0; }
+.hero-meta, .hero-title, .hero-bottom { margin-inline: 3%; }
+.hero .collage { border-inline: 0; }
+
+@media (min-width: 851px) {
+  .hero { padding-block: 18px 22px; }
+  .hero h1 { font-size: clamp(72px, min(8vw, 13svh), 145px); padding-block: 20px 16px; }
+  .hero .collage { height: clamp(260px, 43svh, 560px); }
+  .hero .photo {
+    top: 50%;
+    height: calc(100% - clamp(52px, 5.5vw, 125px));
+    display: flex;
+    flex-direction: column;
+  }
+  .hero .photo img { height: 0; flex: 1; min-height: 0; }
+  .hero .one { transform: translateY(-50%) rotate(-7deg); }
+  .hero .two { transform: translateY(-50%) rotate(8deg); }
+  .hero-bottom { padding-top: 16px; }
+}
+
+@media (min-width: 851px) and (max-height: 800px) {
+  body > header { padding-block: 13px; }
+  .hero { padding-block: 14px 16px; }
+  .hero h1 { padding-block: 14px; }
+  .hero-bottom .button { padding-block: 13px; }
+}
