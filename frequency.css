@@ -1,0 +1,39 @@
+/* 11street / effects layer */
+.frequency-meter{position:fixed;inset:0 0 auto;z-index:80;height:3px;pointer-events:none;background:linear-gradient(90deg,#2443ff,#cfceff,#ff68b4);box-shadow:0 0 12px #ff68b4;transform:scaleX(var(--page-progress,0));transform-origin:left}
+.logo{display:inline-block;transition:color .2s,filter .25s}
+.logo:hover{color:#2443ff;filter:drop-shadow(2px 2px #ff68b4)}
+.hero .collage{--glow-size:clamp(180px,25vw,440px);background-color:#213bfb}
+.hero .collage::after{background:radial-gradient(circle var(--glow-size) at var(--glow-x,50%) var(--glow-y,50%),#fff4eb 0%,#ff88cf 10%,#7c91ff 43%,transparent 100%)}
+.hero .collage .gridlines{mask-image:linear-gradient(165deg,#000 10%,#0007 64%,#000);background-size:46px 46px}
+.hero .collage .chrome-star{translate:var(--drift-x,0px) var(--drift-y,0px);transition:translate .5s ease,filter .4s ease;pointer-events:none}
+.hero .collage.is-tracking .chrome-star{filter:drop-shadow(0 0 22px #ffd8f5)}
+.orbit,.spark,.pink{transition:color .25s,text-shadow .25s}
+.hero:hover .orbit,.spotlight:hover .spark{color:#2443ff;text-shadow:4px 3px #ff68b4}
+.ticker{background:linear-gradient(100deg,#171717 36%,#262a55 70%,#171717)}
+.ticker:hover div{animation-play-state:paused}
+.product-image,.spot-image,.button,.collection-links a{position:relative;isolation:isolate;overflow:hidden}
+.product-image::after,.spot-image::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(ellipse at var(--foil-x,50%) var(--foil-y,50%),#fff9 0%,#ff6abe65 25%,#536dff26 45%,transparent 67%);mix-blend-mode:screen}
+.product:focus-visible .product-image::after,.spot-image:hover::after{opacity:1}
+.product-image .tag,.product-image .arrow,.spot-image .image-label{z-index:1}
+.product-image .arrow{transition:transform .25s,background .25s,color .25s}
+.product:hover .arrow,.product:focus-visible .arrow{transform:rotate(12deg);background:#2443ff;color:white}
+.product h3{transition:color .22s}.product:hover h3{color:#2443ff}
+.button::after{content:'';position:absolute;inset:-20% -50%;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 43%,#fff8 49%,#fff2 53%,transparent 59%);transform:translateX(-65%);transition:transform .65s}
+.button:is(:hover,:focus-visible)::after{transform:translateX(65%)}
+.collections{position:relative;isolation:isolate;background:radial-gradient(ellipse at 0 115%,#262972,#171717 58%)}
+.collection-links a::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#2f43ff,#772298);transform:scaleX(0);transform-origin:left;transition:transform .33s cubic-bezier(.2,.7,.3,1)}
+.collection-links a:is(:hover,:focus-visible)::before{transform:scaleX(1)}
+.collection-links a:is(:hover,:focus-visible){color:white}.collection-links small{padding-left:10px}.collection-links a span{margin-right:10px;transition:transform .25s}.collection-links a:hover span{transform:translate(4px,-3px)}
+.spot-image{transition:transform .4s ease}.spot-image:hover{transform:rotate(-1deg)}
+.story{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 100% 10%,#ffe0f0,transparent 55%),repeating-linear-gradient(0deg,#fff2 0 1px,transparent 1px 34px),#ff69b7}
+.story::before{content:'11';position:absolute;right:2%;top:50%;transform:translateY(-50%) skew(-12deg);z-index:-1;color:#fff4;font:clamp(180px,37vw,620px)/.75 'Archivo Black',sans-serif;letter-spacing:-.16em;pointer-events:none}
+.newsletter form>div{transition:border-color .2s,box-shadow .2s}.newsletter form>div:focus-within{border-color:#2443ff;box-shadow:0 5px 0 -2px #ff68b4}.newsletter button:hover{color:#2443ff}
+footer{background:linear-gradient(125deg,#171717 35%,#1d2055);border-top:1px solid #6666fb}
+dialog[open]{animation:frequency-panel .35s cubic-bezier(.2,.7,.3,1) both}dialog[open]::backdrop{animation:frequency-dim .25s both}dialog[open] .detail-grid img{animation:frequency-print .5s both}
+@keyframes frequency-panel{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes frequency-dim{from{opacity:0}to{opacity:1}}
+@keyframes frequency-print{from{filter:saturate(.2) contrast(1.4)}to{filter:none}}
+@keyframes frequency-arrive{from{transform:translateY(12px);opacity:.55}to{transform:none;opacity:1}}
+.frequency-arrive{animation:frequency-arrive .55s cubic-bezier(.2,.7,.3,1) both}
+@media(any-hover:hover) and (any-pointer:fine) and (prefers-reduced-motion:no-preference){.product:hover .product-image::after{opacity:1}}
+@media(prefers-reduced-motion:reduce){.frequency-meter{display:none}.spot-image:hover{transform:rotate(-3deg)}}
