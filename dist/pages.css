@@ -1,0 +1,16 @@
+body[data-page] main>section,body[data-page] main>.ticker{display:none}
+body[data-page=home] main>.hero,body[data-page=home] main>#drop,body[data-page=home] main>#story{display:block}
+body[data-page=shop] main>#drop,body[data-page=shop] main>#recently-viewed,body[data-page=fit] main>#style-lab,body[data-page=size] main>#size-guide{display:block}
+body[data-page=home] #drop .filters,body[data-page=home] #drop .archive-search{display:none}
+body[data-page=home] #story{padding-block:35px}
+body[data-page=home] #story>p,body[data-page=home] #story>.eyebrow{display:none}
+body[data-page=home] .story-bottom{border:0;padding:0}
+.page-shop-link{display:inline-flex;margin-top:25px}
+header nav{gap:22px;flex-wrap:wrap}
+header nav a[aria-current=page]{color:#2443ff;text-decoration:underline;text-underline-offset:6px}
+.header-actions{display:flex;align-items:center;gap:10px}
+.header-wishlist{font:11px monospace;border:1px solid #333;padding:12px}
+.menu-toggle{display:none;background:transparent;border:1px solid #333;padding:10px;font:11px monospace}
+body[data-page=shop] #drop .section-heading h2{font-size:clamp(40px,6vw,80px)}
+@media(max-width:850px){header{flex-wrap:wrap;gap:15px}header nav{order:3;width:100%;justify-content:center;font-size:10px;gap:20px}header .logo{margin-right:auto}.header-wishlist{font-size:10px;padding:10px}.header-actions{gap:7px}}
+@media(max-width:550px){.menu-toggle{display:block}header nav{display:none;padding:15px 0 5px;justify-content:flex-start;gap:20px}header nav.is-open{display:flex}header nav a:nth-child(n){display:block}header .logo{font-size:30px}.header-wishlist{border:0;padding:5px;font-size:10px}.header-actions .bag{padding:8px}body[data-page=home] #story{padding-block:25px}}
