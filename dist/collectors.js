@@ -67,12 +67,41 @@
     hint.className = 'zoom-hint'; hint.textContent = '⊕ TAP TO INSPECT'; button.append(hint);
     const viewport = document.createElement('div');
     viewport.className = 'zoom-viewport'; button.before(viewport); viewport.append(button);
-    button.onclick = () => {
+    let drag = null, suppressClick = false;
+    image.draggable = false;
+    button.addEventListener('pointerdown', event => {
+      if (!viewport.classList.contains('is-zoomed') || event.button !== 0 || drag) return;
+      suppressClick = false;
+      drag = {id:event.pointerId,x:event.clientX,y:event.clientY,left:viewport.scrollLeft,top:viewport.scrollTop,moved:false};
+      button.setPointerCapture(event.pointerId);
+      viewport.classList.add('is-dragging');
+    });
+    button.addEventListener('pointermove', event => {
+      if (!drag || drag.id !== event.pointerId) return;
+      const dx=event.clientX-drag.x, dy=event.clientY-drag.y;
+      if (Math.hypot(dx,dy)>5) drag.moved=true;
+      if (drag.moved) { viewport.scrollLeft=drag.left-dx; viewport.scrollTop=drag.top-dy; }
+    });
+    const endDrag = event => {
+      if (!drag || drag.id !== event.pointerId) return;
+      suppressClick=drag.moved;
+      drag=null;
+      viewport.classList.remove('is-dragging');
+      if(button.hasPointerCapture(event.pointerId)) button.releasePointerCapture(event.pointerId);
+    };
+    ['pointerup','pointercancel','lostpointercapture'].forEach(type=>button.addEventListener(type,endDrag));
+    button.addEventListener('keydown', event => {
+      if (!viewport.classList.contains('is-zoomed')) return;
+      const directions={ArrowLeft:[-50,0],ArrowRight:[50,0],ArrowUp:[0,-50],ArrowDown:[0,50]};
+      if(directions[event.key]) {event.preventDefault();viewport.scrollLeft+=directions[event.key][0];viewport.scrollTop+=directions[event.key][1];}
+    });
+    button.onclick = event => {
+      if (suppressClick && event.detail !== 0) { suppressClick=false; return; }
       const zoomed = viewport.classList.toggle('is-zoomed');
       button.setAttribute('aria-pressed', String(zoomed));
       button.setAttribute('aria-label',zoomed ? 'Return to full product photo' : 'Enlarge product photo');
-      hint.textContent = zoomed ? '⊖ TAP TO RESET · SCROLL TO EXPLORE' : '⊕ TAP TO INSPECT';
-      if (zoomed) image.src = image.src.replace(/w=\d+/, 'w=2000');
+      hint.textContent = zoomed ? 'HOLD & DRAG · TAP TO RESET' : '⊕ TAP TO INSPECT';
+      if (zoomed) { image.src = image.src.replace(/w=\d+/, 'w=2000'); viewport.scrollLeft=viewport.clientWidth/2; viewport.scrollTop=viewport.clientHeight/2; }
       else { viewport.scrollTop = 0; viewport.scrollLeft = 0; }
     };
   }).observe(detail, {childList:true});
