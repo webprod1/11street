@@ -36,6 +36,6 @@
   measure();
   new MutationObserver(()=>{
     const target=el('detail-body').querySelector('dl');if(!target||el('detail-body').querySelector('.open-size-guide'))return;
-    const link=document.createElement('button');link.type='button';link.className='open-size-guide';link.textContent='HOW TO MEASURE ↗';link.onclick=()=>{el('detail').close();guide.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});guide.querySelector('button').focus({preventScroll:true})};target.before(link);
+    const link=document.createElement('button');link.type='button';link.className='open-size-guide';link.textContent='HOW TO MEASURE ↗';link.onclick=()=>{if(document.body.dataset.page!=='size'){location.href='size-guide.html';return;}el('detail').close();guide.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});guide.querySelector('button').focus({preventScroll:true})};target.before(link);
   }).observe(el('detail-body'),{childList:true});
 })();
