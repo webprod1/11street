@@ -1,0 +1,22 @@
+/* Full viewport shells on every route, not only the homepage. */
+html,body{margin:0;min-width:0;width:100%}
+body{min-height:100svh;display:flex;flex-direction:column}
+body>.topline,body>header,body>main,body>footer{width:100%;max-width:none;margin-inline:0;min-width:0}
+body>main{flex:1}
+main>section{width:100%;max-width:100%;min-width:0}
+.products,.recent-grid,.measure-layout,#fit-board{min-width:0}
+.measure-layout{grid-template-columns:repeat(2,minmax(0,1fr))}
+#fit-board{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
+.measure-layout>*,#fit-board>*,.builder-controls>*,.saved-fit>*{min-width:0}
+.builder-controls label{flex-basis:170px;min-width:0}
+.builder-controls select{max-width:100%}
+.fit-caption,.saved-fit span,.measure-warning,.demo-note{overflow-wrap:anywhere}
+.fit-pieces{flex-wrap:wrap;gap:18px;overflow:visible}
+.fit-piece{flex:1 1 160px;transform:none!important}
+.fit-piece:hover{transform:translateY(-3px)!important}
+.fit-piece img{max-width:100%}
+header{column-gap:20px}
+header nav{min-width:0;justify-content:center}
+@media(max-width:1100px){header{flex-wrap:wrap;row-gap:16px}header .logo{margin-right:auto}header nav{order:3;width:100%;flex-wrap:wrap}}
+@media(max-width:850px){#fit-board{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:550px){.measure-layout{grid-template-columns:minmax(0,1fr)}.fit-pieces{display:grid;grid-template-columns:minmax(0,1fr);padding:16px;overflow:visible;scroll-snap-type:none}.fit-piece{width:100%;max-width:100%}.fit-piece img{height:auto;aspect-ratio:4/5;object-fit:cover}.builder-controls label{flex-basis:100%}.header-actions{flex-wrap:wrap;justify-content:flex-end}header .logo{flex-shrink:0}.saved-fit span{overflow-wrap:anywhere}.topline{gap:12px}.topline>span{min-width:0}}

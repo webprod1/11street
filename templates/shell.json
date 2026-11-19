@@ -9,6 +9,7 @@
     "frequency.css",
     "pages.css",
     "ambient.css",
-    "performance.css"
+    "performance.css",
+    "layout-fix.css"
   ]
 }
