@@ -1,8 +1,8 @@
 /* A soft, animated atmosphere across every page. */
 body{background:#e5e4ef;isolation:isolate}
-body::before,body::after{content:'';position:fixed;inset:-15%;z-index:-1;pointer-events:none;will-change:transform;transform:translate3d(0,0,0)}
-body::before{background:radial-gradient(ellipse at 16% 30%,#7184ff85 0%,transparent 43%),radial-gradient(ellipse at 82% 65%,#ff86ca80 0%,transparent 43%);animation:ambient-drift 19s ease-in-out infinite alternate}
-body::after{background:radial-gradient(ellipse at 65% 12%,#b9a6ff70 0%,transparent 37%),radial-gradient(ellipse at 25% 90%,#81c8ff70 0%,transparent 40%);animation:ambient-drift 25s ease-in-out infinite alternate-reverse}
+body::before,body::after{content:'';position:fixed;inset:auto;left:-12vmin;top:-12vmin;width:95vmin;height:95vmin;z-index:-1;pointer-events:none;will-change:transform;transform:translate3d(0,0,0)}
+body::before{background:radial-gradient(circle,#647affad 0%,#7184ff66 30%,transparent 68%);animation:ambient-blue-travel 10s ease-in-out infinite alternate}
+body::after{left:auto;right:-18vmin;top:15vh;background:radial-gradient(circle,#ff70bda6 0%,#c47bff66 32%,transparent 68%);animation:ambient-pink-travel 13s ease-in-out infinite alternate}
 header,.topline,main,footer{position:relative}
 header{background:#eeedf840;border-color:#6d6b8a55}
 .drop{background:linear-gradient(135deg,#f5f1ff24,#ffc8e935)}
@@ -15,6 +15,7 @@ header{background:#eeedf840;border-color:#6d6b8a55}
 .product-image{box-shadow:0 5px 25px #3548cd12;transition:box-shadow .3s}
 .product:hover .product-image{box-shadow:0 0 22px #647aff55,0 0 40px #ff68b42b}
 .hero .collage{box-shadow:0 0 45px #526aff38}
-@keyframes ambient-drift{0%{transform:translate3d(-2%,-2%,0) scale(1)}50%{transform:translate3d(3%,1%,0) scale(1.04)}100%{transform:translate3d(-1%,4%,0) scale(1.02)}}
-@media(max-width:550px){body::before{background:radial-gradient(ellipse at 5% 25%,#7184ff70,transparent 55%),radial-gradient(ellipse at 95% 70%,#ff86ca70,transparent 55%)}body::after{display:none}}
+@keyframes ambient-blue-travel{0%{transform:translate3d(-8vw,-5vh,0) scale(.85)}45%{transform:translate3d(34vw,14vh,0) scale(1.15)}100%{transform:translate3d(8vw,52vh,0) scale(.95)}}
+@keyframes ambient-pink-travel{0%{transform:translate3d(8vw,25vh,0) scale(1.1)}50%{transform:translate3d(-33vw,-12vh,0) scale(.85)}100%{transform:translate3d(-8vw,40vh,0) scale(1.15)}}
+@media(max-width:550px){body::before,body::after{width:115vmin;height:115vmin}body::before{animation-duration:8s}body::after{animation-duration:11s}}
 @media(prefers-reduced-motion:reduce){body::before,body::after{animation:none;will-change:auto}}
