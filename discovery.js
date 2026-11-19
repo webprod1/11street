@@ -14,18 +14,8 @@
     el('clear-recent').disabled=!history.length;
     el('recent-pieces').innerHTML=history.length?history.map(id=>{const p=inventory.find(p=>p.id===id);return `<button type="button" class="recent-piece" data-recent-id="${id}" aria-label="View ${p.name}"><img loading="lazy" src="${photo(p,480)}" alt="Illustrative reference for ${p.name}"><span>${p.name} ↗</span><small>SIZE ${p.size} / ${money(p.price)} sample</small></button>`}).join(''):'<p>Open a product to start your trail. Your recent finds will appear here.</p>';
   }
-  const openProduct=el('products').onclick;
-  el('products').onclick=function(event){
-    const target=event.target.closest('[data-id]');
-    openProduct.call(this,event);
-    if(!target)return;
-    const id=Number(target.dataset.id);
-    if(!inventory.some(p=>p.id===id))return;
-    history=[id,...history.filter(previous=>previous!==id)].slice(0,8);
-    try{localStorage.setItem('11street-recent',JSON.stringify(history));el('recent-status').textContent=''}catch{el('recent-status').textContent='History is available for this visit; browser storage is unavailable.'}
-    drawRecent();
-  };
-  el('recent-pieces').onclick=event=>{const piece=event.target.closest('[data-recent-id]');if(!piece)return;const target=document.createElement('button');target.dataset.id=piece.dataset.recentId;el('products').onclick({target})};
+  document.addEventListener('product:opened',event=>{const id=event.detail.id;history=[id,...history.filter(x=>x!==id)].slice(0,8);drawRecent();});
+  el('recent-pieces').onclick=event=>{const piece=event.target.closest('[data-recent-id]');if(!piece)return;openProduct(Number(piece.dataset.recentId))};
   el('clear-recent').onclick=()=>{history=[];try{localStorage.removeItem('11street-recent')}catch{}drawRecent();el('recent-status').textContent='Viewing history cleared.'};
   drawRecent();render();
 })();
