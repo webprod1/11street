@@ -1,0 +1,20 @@
+/* A soft, animated atmosphere across every page. */
+body{background:#e5e4ef;isolation:isolate}
+body::before,body::after{content:'';position:fixed;inset:-15%;z-index:-1;pointer-events:none;will-change:transform;transform:translate3d(0,0,0)}
+body::before{background:radial-gradient(ellipse at 16% 30%,#7184ff85 0%,transparent 43%),radial-gradient(ellipse at 82% 65%,#ff86ca80 0%,transparent 43%);animation:ambient-drift 19s ease-in-out infinite alternate}
+body::after{background:radial-gradient(ellipse at 65% 12%,#b9a6ff70 0%,transparent 37%),radial-gradient(ellipse at 25% 90%,#81c8ff70 0%,transparent 40%);animation:ambient-drift 25s ease-in-out infinite alternate-reverse}
+header,.topline,main,footer{position:relative}
+header{background:#eeedf840;border-color:#6d6b8a55}
+.drop{background:linear-gradient(135deg,#f5f1ff24,#ffc8e935)}
+.style-lab{background:linear-gradient(140deg,#ced5ff8a,#e5d4ef66 52%,#ffbfdf66)}
+.size-guide{background:linear-gradient(130deg,#ebedff88,#e4d4ff66 48%,#ffd8ea77)}
+.recent-section{background:linear-gradient(135deg,#cfceff77,#ffc8e966)}
+.newsletter{background:#f2ecff33}
+.collections{background:radial-gradient(ellipse at 10% 20%,#3043ad99,transparent 65%),radial-gradient(ellipse at 90% 90%,#9b286d66,transparent 60%),#171721}
+.story{background:radial-gradient(ellipse at 10% 80%,#7168ff55,transparent 65%),radial-gradient(ellipse at 90% 10%,#ffe0f0bb,transparent 55%),#f88dc6}
+.product-image{box-shadow:0 5px 25px #3548cd12;transition:box-shadow .3s}
+.product:hover .product-image{box-shadow:0 0 22px #647aff55,0 0 40px #ff68b42b}
+.hero .collage{box-shadow:0 0 45px #526aff38}
+@keyframes ambient-drift{0%{transform:translate3d(-2%,-2%,0) scale(1)}50%{transform:translate3d(3%,1%,0) scale(1.04)}100%{transform:translate3d(-1%,4%,0) scale(1.02)}}
+@media(max-width:550px){body::before{background:radial-gradient(ellipse at 5% 25%,#7184ff70,transparent 55%),radial-gradient(ellipse at 95% 70%,#ff86ca70,transparent 55%)}body::after{display:none}}
+@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none;will-change:auto}}
