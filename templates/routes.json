@@ -1,0 +1,68 @@
+[
+  {
+    "file": "index.html",
+    "key": "home",
+    "title": "Rare finds. Real street.",
+    "content": "<section class=\"hero\"><div class=\"hero-meta\"><span>INDEPENDENT STYLE. NO REPEATS.</span><span>EST. IN THE STREETS / VOL. 001</span></div><div class=\"hero-title\"><h1>RARE FINDS.<br><span>REAL STREET.</span></h1><div class=\"orbit\">✳<small>OUT OF THE ORDINARY<br>INTO YOUR ROTATION</small></div></div><div class=\"collage\"><div class=\"gridlines\"></div><div class=\"huge-number\">11</div><div class=\"sidecode\">ARCHIVE_001 / DO NOT DUPLICATE / ORIGINAL FREQUENCY</div><figure class=\"photo one\"><img decoding=\"async\" src=\"https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=700&q=85\" alt=\"White graphic T-shirt photographed on a hanger\"><figcaption>FILE 001 / GRAPHIC CULTURE</figcaption></figure><figure class=\"photo two\"><img decoding=\"async\" src=\"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=650&q=85\" alt=\"Blue denim jeans with visible fabric detail\"><figcaption>FILE 002 / DENIM DNA</figcaption></figure><div class=\"sticker\">GOOD<br>FINDS.<br><span>BAD HABITS.</span></div><div class=\"chrome-star\">✦</div><div class=\"stamp\">11<br><small>STREET APPROVED</small></div><span class=\"coordinate\">11° STREET / EVERYWHERE</span></div><div class=\"hero-bottom\"><p>For the ones who dig deeper.<br>Clothes with character. A rotation with a point of view.</p><div class=\"ctas\"><a class=\"button blue\" href=\"shop.html\">SHOP THE DROP <span>↗</span></a><a class=\"button outline\" href=\"shop.html\">EXPLORE THE ARCHIVE <span>↘</span></a></div></div></section><section class=\"drop section\" id=\"drop\"><div class=\"eyebrow\">[ 01 / THE ROTATION ] <span>YOUR NEXT FAVORITE IS IN HERE.</span></div><div class=\"section-heading\"><h2>LATEST DROP<span class=\"pink\">✳</span></h2><p>Old-school soul. New rotation.<br>Explore the concept collection.</p></div><div class=\"demo-note\">CONCEPT STORE / Illustrative products, photos and prices. Inventory is not yet live.</div><div id=\"products\" class=\"products\"></div><p id=\"empty\" hidden>No pieces match this combination. Try another filter.</p><a class=\"button blue page-shop-link\" href=\"shop.html\">VIEW ALL PIECES</a></section><section id=\"story\" class=\"story section\"><div class=\"story-bottom\"><span class=\"mini-logo\">11st®</span><p>11street is a home for people who see more than clothes. For the archive diggers, the tag readers, the ones building a collection that looks like nobody else's. Find your piece. Wear your story.</p></div></section>",
+    "css": [
+      "intro.css",
+      "hover.css",
+      "full-view.css",
+      "collectors.css",
+      "shop-polish.css"
+    ],
+    "js": [
+      "app.js",
+      "collectors.js",
+      "shop-polish.js",
+      "hover.js"
+    ]
+  },
+  {
+    "file": "shop.html",
+    "key": "shop",
+    "title": "Shop the archive",
+    "content": "<section class=\"drop section\" id=\"drop\"><div class=\"eyebrow\">[ 01 / THE ROTATION ] <span>YOUR NEXT FAVORITE IS IN HERE.</span></div><div class=\"section-heading\"><h2>LATEST DROP<span class=\"pink\">✳</span></h2><p>Old-school soul. New rotation.<br>Explore the concept collection.</p></div><div class=\"demo-note\">CONCEPT STORE / Illustrative products, photos and prices. Inventory is not yet live.</div><div class=\"filters\"><div id=\"categories\"><button class=\"selected\" data-category=\"All\">ALL PIECES</button><button data-category=\"Tees\">TEES</button><button data-category=\"Denim\">DENIM</button><button data-category=\"Outerwear\">OUTERWEAR</button><button data-category=\"Rare finds\">RARE FINDS</button></div><div class=\"selects\"><select id=\"size\" aria-label=\"Filter by size\"><option value=\"\">SIZE: ALL</option><option>M</option><option>L</option><option>XL</option><option>32</option></select><select id=\"price\" aria-label=\"Sort price\"><option value=\"\">PRICE ↕</option><option value=\"asc\">LOW TO HIGH</option><option value=\"desc\">HIGH TO LOW</option></select><select id=\"availability\" aria-label=\"Filter availability\"><option value=\"\">ALL STATUS</option><option value=\"preview\">PREVIEW</option><option value=\"archived\">ARCHIVED</option></select></div></div><div id=\"products\" class=\"products\"></div><p id=\"empty\" hidden>No pieces match this combination. Try another filter.</p></section>",
+    "css": [
+      "collectors.css",
+      "shop-polish.css",
+      "discovery.css"
+    ],
+    "js": [
+      "app.js",
+      "collectors.js",
+      "discovery.js",
+      "shop-polish.js"
+    ]
+  },
+  {
+    "file": "build-your-fit.html",
+    "key": "fit",
+    "title": "Build your fit",
+    "content": "",
+    "css": [
+      "collectors.css",
+      "fit.css",
+      "builder.css"
+    ],
+    "js": [
+      "app.js",
+      "collectors.js",
+      "fit-page.js",
+      "builder.js"
+    ]
+  },
+  {
+    "file": "size-guide.html",
+    "key": "size",
+    "title": "Size guide",
+    "content": "",
+    "css": [
+      "fit.css"
+    ],
+    "js": [
+      "app.js",
+      "size-page.js"
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-body[data-page] main>section,body[data-page] main>.ticker{display:none}
+
 body[data-page=home] main>.hero,body[data-page=home] main>#drop,body[data-page=home] main>#story{display:block}
 body[data-page=shop] main>#drop,body[data-page=shop] main>#recently-viewed,body[data-page=fit] main>#style-lab,body[data-page=size] main>#size-guide{display:block}
 body[data-page=home] #drop .filters,body[data-page=home] #drop .archive-search{display:none}

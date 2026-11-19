@@ -1,4 +1,5 @@
 (() => {
+  if(el('products')) {
   let saved = new Set();
   try { const data = JSON.parse(localStorage.getItem('11street-wishlist') || '[]'); if (Array.isArray(data)) saved = new Set(data.filter(id => inventory.some(p => p.id === id))); } catch {}
   let onlySaved = false;
@@ -54,6 +55,7 @@
   new MutationObserver(enhanceCards).observe(el('products'), {childList:true});
   enhanceCards();
 
+  }
   const detail = el('detail-body');
   new MutationObserver(() => {
     const image = detail.querySelector('.detail-grid img');

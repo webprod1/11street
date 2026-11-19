@@ -1,0 +1,14 @@
+{
+  "head": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"description\" content=\"11street. A new frequency for streetwear collectors. Explore the Y2K archive.\"><title>11street — Rare finds. Real street.</title><link rel=\"icon\" type=\"image/svg+xml\" href=\"favicon.svg?v=11street-2\"><meta name=\"theme-color\" content=\"#2443ff\"><link rel=\"preconnect\" href=\"https://images.unsplash.com\"><link href=\"https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">",
+  "topline": "<div class=\"topline\"><span>TRANSMITTING FROM THE UNDERGROUND</span><span>11STREET® / COLLECTOR FREQUENCY 001</span><span class=\"live\">● SIGNAL ACTIVE</span></div>",
+  "header": "<header><a href=\"index.html\" class=\"logo\">11street<span>®</span></a><nav id=\"primary-navigation\">{{NAV}}</nav><div class=\"header-actions\"><a class=\"header-wishlist\" href=\"shop.html#wishlist\" aria-label=\"Open wishlist\">♡ SAVED</a><button class=\"menu-toggle\" type=\"button\" aria-controls=\"primary-navigation\" aria-expanded=\"false\">MENU ☰</button><button id=\"bag\" class=\"bag\">BAG [<span id=\"count\">0</span>] ↗</button></div></header>",
+  "footer": "<footer><a class=\"logo\" href=\"index.html\">11street®</a><span>RARE FINDS. REAL STREET.</span><a href=\"shop.html\">BACK TO THE DROP ↑</a><small>© <span id=\"year\"></span> 11STREET / BUILT FOR THE COLLECTORS.</small></footer>",
+  "dialogs": "<dialog id=\"detail\"><button class=\"close\" aria-label=\"Close product details\">✕</button><div id=\"detail-body\"></div></dialog><dialog id=\"cart\"><button class=\"close\" aria-label=\"Close bag\">✕</button><h2>YOUR ROTATION</h2><div id=\"cart-items\"></div><div id=\"cart-total\"></div><p class=\"demo-note\">Concept bag. Payments and shipping are not connected. No orders or charges are placed.</p><button class=\"button blue\" id=\"checkout\">CHECKOUT STATUS ↗</button><p id=\"checkout-status\" role=\"status\"></p></dialog>",
+  "commonCSS": [
+    "style.css",
+    "frequency.css",
+    "pages.css",
+    "ambient.css",
+    "performance.css"
+  ]
+}
